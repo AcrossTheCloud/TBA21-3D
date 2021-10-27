@@ -84,13 +84,12 @@ function setup3dhop() {
 	presenter = new Presenter("draw-canvas");
 
 	const urlParams = new URLSearchParams(window.location.search);
-	const myModel = "01_003_CaryophylliaClavus_500k.nxz";// urlParams.get('model');
+	const myModel = urlParams.get('model');
 	console.log(myModel);
 
 	presenter.setScene({
 		meshes: {
- 			"Mesh": { url: `/models/01_003_CaryophylliaClavus_500k.nxz`}
-			//"mesh_1" : { url: "models/01_002_AnthemiphylliaSpinifera_full.nxz" }
+ 			"Mesh": { url: `/models/${myModel}`}
 		},
 		modelInstances : {
 			"Model": { 
